@@ -10,11 +10,11 @@ namespace Loja.Model
     {
         private int id;
         private string nome;
-        private string nacionalidade;
+        private int nacionalidade;
         private decimal preco;
         private float tamanho;
 
-        public Perfume(int id, string nome, string nacionalidade, decimal preco, float tamanho)
+        public Perfume(int id, string nome, int nacionalidade, decimal preco, float tamanho)
         {
             this.id = id;
             this.nome = nome;
@@ -31,9 +31,9 @@ namespace Loja.Model
 
         public void SetNome(string nome) {  this.nome = nome;}
 
-        public string GetNacionalidade() {  return nacionalidade;}
+        public int GetNacionalidade() {  return nacionalidade;}
 
-        public void SetNacionalidade (string nacionalidade) { this.nacionalidade = nacionalidade;}
+        public void SetNacionalidade (int nacionalidade) { this.nacionalidade = nacionalidade;}
 
         public decimal GetPreco() {  return preco;}
 
@@ -43,7 +43,7 @@ namespace Loja.Model
 
         public void SetTamanho (float tamanho) { this.tamanho = tamanho ; }
 
-        public void Visualizar()
+        public virtual void Visualizar()
         {
             Console.WriteLine("**************************************************************");
             Console.WriteLine("Dados do perfume:");
@@ -53,7 +53,7 @@ namespace Loja.Model
             Console.WriteLine($"Nacionalidade do perfume: {this.nacionalidade}");
             Console.WriteLine($"Preço do perfume: {this.preco}");
             Console.WriteLine($"Tamanho do perfume em ML: {this.tamanho}");
-            Console.WriteLine("**************************************************************");
+            
         }
 
     }
